@@ -13,10 +13,22 @@ class expenses extends StatefulWidget {
 class _expensesState extends State<expenses> {
   List<expense> _registeredexpenses = [
     expense(
-      title: "Groceries",
+      title: "groceries",
       amount: 1000,
       date: DateTime.now(),
       category: Category.food,
+    ),
+    expense(
+      title: "shopping",
+      amount: 2000,
+      date: DateTime.now(),
+      category: Category.shopping,
+    ),
+    expense(
+      title: "travel",
+      amount: 3000,
+      date: DateTime.now(),
+      category: Category.travel,
     ),
   ];
   @override
