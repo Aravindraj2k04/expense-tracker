@@ -1,19 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/material.dart'; // Import the necessary package
-
 import 'package:expensetracker/models/expense.dart';
 
-class ExpenseItem extends StatelessWidget {
-  final Expense expense;
-
-  // Use the correct constructor syntax
-  const ExpenseItem({
-    Key? key,
+class expense_item extends StatelessWidget {
+  
+  const expense_item({
+    super.key,
     required this.expense,
-  }) : super(key: key);
+  });
+  final  expense;
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return const Card(child: expenses.title,);
   }
 }
