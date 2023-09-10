@@ -6,9 +6,13 @@ void main()
 {
   runApp(MaterialApp(
     title: "Expense tracker",
-    home: Scaffold(
-      appBar: AppBar(title: Text("Expense tracker"),),
-      body:expenses(),
+    home: SafeArea(
+      child: 
+        Scaffold(
+          //appBar: AppBar(title: Text("Expense tracker"),),
+          body:expenses(),
+        ),
+      
     ),
   ),
   );

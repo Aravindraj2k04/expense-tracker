@@ -12,10 +12,21 @@ class Expenseitem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+      padding: const EdgeInsets.symmetric(horizontal: 26, vertical: 20),
       child: Card(
-        child: Text(expense.title),
-      ),
+          child: Column(
+        children: [
+          Text(expense.title),
+          const SizedBox(
+            height: 10,
+          ),
+          Row(
+            children: [
+              Text('\$${expense.amount.toStringAsFixed(2)}'),
+            ],
+          )
+        ],
+      )),
     );
   }
 }
