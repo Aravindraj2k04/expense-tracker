@@ -36,6 +36,7 @@ class _expensesState extends State<expenses> {
     return Scaffold(
        body: Column(
         children: [ 
+          Text( "The chart"),
           expenselist(expenses:_registeredexpenses)
         ],
        ),
