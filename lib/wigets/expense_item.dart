@@ -23,6 +23,8 @@ class Expenseitem extends StatelessWidget {
           Row(
             children: [
               Text('\$${expense.amount.toStringAsFixed(2)}'),
+              const Spacer(),
+              Text(expense.date.toString()),
             ],
           )
         ],
