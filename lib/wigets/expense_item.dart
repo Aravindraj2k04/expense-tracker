@@ -12,7 +12,7 @@ class Expenseitem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 26, vertical: 20),
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
       child: Card(
           child: Column(
         children: [
@@ -24,7 +24,20 @@ class Expenseitem extends StatelessWidget {
             children: [
               Text('\$${expense.amount.toStringAsFixed(2)}'),
               const Spacer(),
-              Text(expense.date.toString()),
+              Row(
+                children: [
+                  Icon(Icons.alarm),
+                  const SizedBox(
+                    width: 8,
+                  ),
+                  //Text('${(expense.category).toString()}'),
+                  const SizedBox(
+                    width: 5,
+                  ),
+                 
+                 Text(expense.date.toString()),
+                ],
+              ),
             ],
           )
         ],
