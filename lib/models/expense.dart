@@ -18,6 +18,7 @@ const category_icon = {
 class expense {
   expense({
     required this.title,
+    
     required this.amount,
     required this.date,
     required this.category,
