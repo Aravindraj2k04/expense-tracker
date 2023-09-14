@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:expensetracker/models/expense.dart';
-//import 'package:expensetracker/expenses.dart';
+import 'package:expensetracker/expenses.dart';
 
 class Expenseitem extends StatelessWidget {
   const Expenseitem({
@@ -26,7 +26,7 @@ class Expenseitem extends StatelessWidget {
               const Spacer(),
               Row(
                 children: [
-                  Icon(Icons.alarm),
+                  Icon(category_icon[expense.category]),
                   const SizedBox(
                     width: 8,
                   ),
@@ -35,7 +35,7 @@ class Expenseitem extends StatelessWidget {
                     width: 5,
                   ),
                  
-                 Text(expense.date.toString()),
+                 Text(expense.formattedDate),
                 ],
               ),
             ],
