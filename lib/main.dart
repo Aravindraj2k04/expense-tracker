@@ -9,7 +9,7 @@ void main()
     home: SafeArea(
       child: 
         Scaffold(
-          //appBar: AppBar(title: Text("Expense tracker"),),
+          
           body:expenses(),
         ),
       
