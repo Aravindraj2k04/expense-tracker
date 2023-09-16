@@ -41,7 +41,10 @@ class _expensesState extends State<expenses> {
       appBar: AppBar(
         title: Text('Expenses Tracker'),
         actions: [
-          IconButton(onPressed: () {}, icon: Icon(Icons.add)),
+          IconButton(onPressed: () {
+            _openAddExpenseOverlay();
+          },
+           icon: Icon(Icons.add)),
         ],
       ),
       body: Column(
