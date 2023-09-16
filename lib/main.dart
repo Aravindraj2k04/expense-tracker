@@ -10,8 +10,10 @@ void main() {
           appBar:
               AppBar(
                 title: Text('Expenses Tracker'),
+                //centerTitle: true,
+                //backgroundColor: Color.fromARGB(255, 159, 114, 244),
                 actions: [
-                //backgroundColor: Colors.red,
+                
                 IconButton(
                   onPressed: (){},
                    icon: Icon(Icons.add))]),
