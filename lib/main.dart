@@ -4,16 +4,13 @@ import 'expenses.dart';
 void main() {
   runApp(
     MaterialApp(
-      theme: ThemeData(useMaterial3: true),
-      title: ('Flutter Expense tracker'),
+      //theme: ThemeData(useMaterial3: true),
       home: SafeArea(
         child: Scaffold(
           appBar:
-              AppBar(actions: [
-                Title(
-                  color: Colors.blueAccent,
-                   child: Center(child: Text("Expense tracker")),
-                   ),
+              AppBar(
+                title: Text('Expenses Tracker'),
+                actions: [
                 //backgroundColor: Colors.red,
                 IconButton(
                   onPressed: (){},
