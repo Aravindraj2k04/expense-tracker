@@ -31,15 +31,25 @@ class _expensesState extends State<expenses> {
       category: Category.travel,
     ),
   ];
+
+  void _openAddExpenseOverlay(){
+    showModalBottomSheet(context: context, builder: (cxt)=> Text('This is a modal Bottom Sheet'));
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-       body: Column(
-        children: [ 
-          Text( "The chart"),
-          expenselist(expenses:_registeredexpenses)
+      appBar: AppBar(
+        title: Text('Expenses Tracker'),
+        actions: [
+          IconButton(onPressed: () {}, icon: Icon(Icons.add)),
         ],
-       ),
+      ),
+      body: Column(
+        children: [
+          Text("The chart"),
+          expenselist(expenses: _registeredexpenses)
+        ],
+      ),
     );
   }
 }
