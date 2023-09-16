@@ -4,8 +4,8 @@ import 'expenses.dart';
 void main() {
   runApp(
     MaterialApp(
-      //theme: ThemeData(useMaterial3: true),
-      title:('Expense tracker'),
+      theme: ThemeData(useMaterial3: true),
+      title: ('Flutter Expense tracker'),
       home: SafeArea(
         child: Scaffold(
           appBar:
