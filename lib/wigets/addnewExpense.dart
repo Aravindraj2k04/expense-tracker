@@ -18,9 +18,7 @@ class _NewExpenseState extends State<NewExpense> {
     return Padding(
       padding: EdgeInsets.all(16),
       child: Column(
-        
         children: [
-
            TextField(
             onChanged: _saveTitleinput,
             maxLength: 50,
