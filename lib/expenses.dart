@@ -26,6 +26,7 @@ class _expensesState extends State<expenses> {
       category: Category.shopping,
     ),
     expense(
+      
       title: "travel",
       amount: 3000,
       date: DateTime.now(),
