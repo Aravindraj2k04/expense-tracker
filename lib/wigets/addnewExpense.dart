@@ -35,17 +35,17 @@ class _NewExpenseState extends State<NewExpense> {
             maxLength: 50,
             decoration: const InputDecoration(labelText: 'Title'),
           ),
-          Row(
-            children: [
-              TextField(
-                controller: enteredAmt,
-                keyboardType: TextInputType.number,
-                maxLength: 13,
-                decoration: const InputDecoration(
-                    prefixText: '\$ ', labelText: 'Enter Amount'),
-              ),
-            ],
+          TextField(
+            controller: enteredAmt,
+            keyboardType: TextInputType.number,
+            maxLength: 13,
+            decoration: const InputDecoration(
+                prefixText: '\$ ', labelText: 'Enter Amount'),
           ),
+          const Text('Date'),
+          IconButton(
+            onPressed: (){}, 
+          icon: Icon(Icons.calendar_today)),
           Row(
             children: [
               ElevatedButton(
