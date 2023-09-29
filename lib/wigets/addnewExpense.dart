@@ -35,12 +35,16 @@ class _NewExpenseState extends State<NewExpense> {
             maxLength: 50,
             decoration: const InputDecoration(labelText: 'Title'),
           ),
-          TextField(
-            controller: enteredAmt,
-            keyboardType: TextInputType.number,
-            maxLength: 13,
-            decoration: const InputDecoration(
-                prefixText: '\$ ', labelText: 'Enter Amount'),
+          Row(
+            children: [
+              TextField(
+                controller: enteredAmt,
+                keyboardType: TextInputType.number,
+                maxLength: 13,
+                decoration: const InputDecoration(
+                    prefixText: '\$ ', labelText: 'Enter Amount'),
+              ),
+            ],
           ),
           Row(
             children: [
