@@ -30,6 +30,7 @@ class _NewExpenseState extends State<NewExpense> {
       padding: EdgeInsets.all(16),
       child: Column(
         children: [
+
           TextField(
             controller: titleController,
             maxLength: 50,
