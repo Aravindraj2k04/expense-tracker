@@ -43,6 +43,7 @@ class _NewExpenseState extends State<NewExpense> {
                 prefixText: '\$ ', labelText: 'Enter Amount'),
           ),
           const Text('Date'),
+          
           IconButton(
             onPressed: (){}, 
           icon: Icon(Icons.calendar_today)),
