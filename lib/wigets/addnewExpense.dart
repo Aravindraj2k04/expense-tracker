@@ -47,8 +47,7 @@ class _NewExpenseState extends State<NewExpense> {
           const Text('Select Date'),
           
           IconButton(
-
-            onPressed: (){}, 
+          onPressed: (){}, 
           icon: Icon(Icons.calendar_today)),
           Row(
             children: [
