@@ -36,15 +36,17 @@ class _NewExpenseState extends State<NewExpense> {
             decoration: const InputDecoration(labelText: 'Title'),
           ),
           TextField(
+            
             controller: enteredAmt,
             keyboardType: TextInputType.number,
             maxLength: 13,
             decoration: const InputDecoration(
                 prefixText: '\$ ', labelText: 'Enter Amount'),
           ),
-          const Text('Date'),
+          const Text('Select Date'),
           
           IconButton(
+
             onPressed: (){}, 
           icon: Icon(Icons.calendar_today)),
           Row(
