@@ -56,7 +56,7 @@ class _NewExpenseState extends State<NewExpense> {
             decoration: const InputDecoration(
                 prefixText: '\$ ', labelText: 'Enter Amount'),
           ),
-            Text(selectDate == null ? 'No Date Chosen!' : formatting.format(selectDate!)),
+            Text(selectDate == null ? 'Select Date' : formatting.format(selectDate!)),
           IconButton(
               onPressed: _presentDatePicker,
               icon: Icon(Icons.calendar_month_outlined)),
