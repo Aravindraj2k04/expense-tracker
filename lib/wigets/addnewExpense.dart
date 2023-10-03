@@ -16,6 +16,15 @@ void _saveTitleInput(String inputvalue) {
 class _NewExpenseState extends State<NewExpense> {
   final titleController = TextEditingController();
   final enteredAmt = TextEditingController();
+  void _presentDatePicker() {
+    final now = DateTime.now();
+    final firstdate = DateTime(now.year - 1, now.month, now.day);
+    showDatePicker(
+        context: context,
+        initialDate: now,
+        firstDate: firstdate,
+        lastDate: now);
+  }
 
   @override
   void dispose() {
@@ -30,14 +39,12 @@ class _NewExpenseState extends State<NewExpense> {
       padding: EdgeInsets.all(16),
       child: Column(
         children: [
-
           TextField(
             controller: titleController,
             maxLength: 50,
             decoration: const InputDecoration(labelText: 'Title'),
           ),
           TextField(
-            
             controller: enteredAmt,
             keyboardType: TextInputType.number,
             maxLength: 13,
@@ -45,10 +52,9 @@ class _NewExpenseState extends State<NewExpense> {
                 prefixText: '\$ ', labelText: 'Enter Amount'),
           ),
           const Text('Select Date'),
-          
           IconButton(
-          onPressed: (){}, 
-          icon: Icon(Icons.calendar_today)),
+              onPressed: _presentDatePicker,
+              icon: Icon(Icons.calendar_month_outlined)),
           Row(
             children: [
               ElevatedButton(
