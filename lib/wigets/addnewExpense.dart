@@ -34,6 +34,7 @@ class _NewExpenseState extends State<NewExpense> {
   @override
   void dispose() {
     titleController.dispose();
+  
     enteredAmt.dispose();
     super.dispose();
   }
