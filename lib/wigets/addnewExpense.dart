@@ -5,13 +5,14 @@ class NewExpense extends StatefulWidget {
   const NewExpense({Key? key}) : super(key: key);
 
   @override
-  
+
   State<NewExpense> createState() => _NewExpenseState();
 }
 
 var enteredtitle = '';
 
 void _saveTitleInput(String inputvalue) {
+  
   enteredtitle = inputvalue;
 }
 
