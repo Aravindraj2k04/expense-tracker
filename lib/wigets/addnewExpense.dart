@@ -12,12 +12,13 @@ class NewExpense extends StatefulWidget {
 var enteredtitle = '';
 
 void _saveTitleInput(String inputvalue) {
-  
+
   enteredtitle = inputvalue;
 }
 
 class _NewExpenseState extends State<NewExpense> {
   final titleController = TextEditingController();
+  
   final enteredAmt = TextEditingController();
   DateTime? selectDate;
   Future<void> _presentDatePicker() async {
