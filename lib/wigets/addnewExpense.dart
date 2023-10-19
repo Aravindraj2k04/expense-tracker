@@ -5,20 +5,17 @@ class NewExpense extends StatefulWidget {
   const NewExpense({Key? key}) : super(key: key);
 
   @override
-
   State<NewExpense> createState() => _NewExpenseState();
 }
 
 var enteredtitle = '';
 
 void _saveTitleInput(String inputvalue) {
-
   enteredtitle = inputvalue;
 }
 
 class _NewExpenseState extends State<NewExpense> {
   final titleController = TextEditingController();
-  
   final enteredAmt = TextEditingController();
   DateTime? selectDate;
   Future<void> _presentDatePicker() async {
@@ -37,7 +34,7 @@ class _NewExpenseState extends State<NewExpense> {
   @override
   void dispose() {
     titleController.dispose();
-  
+
     enteredAmt.dispose();
     super.dispose();
   }
@@ -60,12 +57,28 @@ class _NewExpenseState extends State<NewExpense> {
             decoration: const InputDecoration(
                 prefixText: '\$ ', labelText: 'Enter Amount'),
           ),
-            Text(selectDate == null ? 'Select Date' : formatting.format(selectDate!)),
+          Text(selectDate == null
+              ? 'Select Date'
+              : formatting.format(selectDate!)),
           IconButton(
               onPressed: _presentDatePicker,
               icon: Icon(Icons.calendar_month_outlined)),
           Row(
             children: [
+              DropdownButton(
+                  items: Category.values
+                      .map(
+                        (category) => DropdownMenuItem(
+                          value: category,
+                          child: Text(
+                            category.name.toString(),
+                          ),
+                        ),
+                      )
+                      .toList(),
+                  onChanged: (value) {print(value);
+                  },
+                  hint: Text('Select Category')),
               ElevatedButton(
                 onPressed: () {
                   print(titleController.text);
