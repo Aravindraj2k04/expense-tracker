@@ -34,13 +34,13 @@ class _NewExpenseState extends State<NewExpense> {
 
   void submitdata() {
     final enteredtitle = titleController.text;
-    final enteredamount = double.parse(enteredAmt.text);
-    if (enteredtitle.isEmpty || enteredamount <= 0 || selectDate == null) {
+    final enteredamount = double.tryParse(enteredAmt.text);
+    if (enteredtitle.isEmpty || enteredamount == null || selectDate == null) {
       showDialog(
         context: context,
         builder: (cxt) => AlertDialog(
-          title: Text('Error'),
-          content: Text('Please enter valid data'),
+          title: Text('Invalid Input'),
+          content: Text('Please enter a valid title amount and date'),
           actions: [
             TextButton(
                 onPressed: () {
@@ -51,6 +51,14 @@ class _NewExpenseState extends State<NewExpense> {
         ),
       );
       return;
+    }
+    else{
+      expense(
+        title: enteredtitle,
+        amount: enteredamount,
+        date: selectDate!,
+        category: selectedCategory,
+      );
     }
   }
 
