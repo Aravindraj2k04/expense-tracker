@@ -42,6 +42,7 @@ class _NewExpenseState extends State<NewExpense> {
 
   @override
   Widget build(BuildContext context) {
+    selectedCategory = Category.food;
     return Padding(
       padding: EdgeInsets.all(16),
       child: Column(
@@ -81,7 +82,10 @@ class _NewExpenseState extends State<NewExpense> {
                     if (value == null) {
                       return;
                     }
-                    selectedCategory = value;
+                    setState(() {
+                      selectedCategory = value ;
+                    });
+                   
                   },
                   hint: Text('Select Category')),
               ElevatedButton(
