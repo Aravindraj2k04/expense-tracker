@@ -42,7 +42,6 @@ class _NewExpenseState extends State<NewExpense> {
 
   @override
   Widget build(BuildContext context) {
-    selectedCategory = Category.food;
     return Padding(
       padding: EdgeInsets.all(16),
       child: Column(
@@ -68,26 +67,28 @@ class _NewExpenseState extends State<NewExpense> {
           Row(
             children: [
               DropdownButton(
-                  items: Category.values
-                      .map(
-                        (category) => DropdownMenuItem(
-                          value: category,
-                          child: Text(
-                            category.name.toUpperCase(),
-                          ),
+                value: selectedCategory,
+                items: Category.values
+                    .map(
+                      (category) => DropdownMenuItem(
+                        value: category,
+                        child: Text(
+                          category.name.toUpperCase(),
                         ),
-                      )
-                      .toList(),
-                  onChanged: (value) {
-                    if (value == null) {
-                      return;
-                    }
-                    setState(() {
-                      selectedCategory = value ;
-                    });
-                   
-                  },
-                  hint: Text('Select Category')),
+                      ),
+                    )
+                    .toList(),
+                onChanged: (value) {
+                  if (value == null) {
+                    return;
+                  }
+                  setState(() {
+                    selectedCategory = value;
+                    print(selectedCategory);  
+                  });
+                },
+                // hint: Text('Select Category'),
+              ),
               ElevatedButton(
                 onPressed: () {
                   print(titleController.text);
