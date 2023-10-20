@@ -32,6 +32,28 @@ class _NewExpenseState extends State<NewExpense> {
     });
   }
 
+  void submitdata() {
+    final enteredtitle = titleController.text;
+    final enteredamount = double.parse(enteredAmt.text);
+    if (enteredtitle.isEmpty || enteredamount <= 0 || selectDate == null) {
+      showDialog(
+        context: context,
+        builder: (cxt) => AlertDialog(
+          title: Text('Error'),
+          content: Text('Please enter valid data'),
+          actions: [
+            TextButton(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+                child: Text('Okay'))
+          ],
+        ),
+      );
+      return;
+    }
+  }
+
   @override
   void dispose() {
     titleController.dispose();
@@ -64,6 +86,7 @@ class _NewExpenseState extends State<NewExpense> {
           IconButton(
               onPressed: _presentDatePicker,
               icon: Icon(Icons.calendar_month_outlined)),
+          SizedBox(height: 16),
           Row(
             children: [
               DropdownButton(
@@ -84,18 +107,18 @@ class _NewExpenseState extends State<NewExpense> {
                   }
                   setState(() {
                     selectedCategory = value;
-                    print(selectedCategory);  
+                    print(selectedCategory);
                   });
                 },
                 // hint: Text('Select Category'),
               ),
               ElevatedButton(
                 onPressed: () {
-                  print(titleController.text);
-                  print(enteredAmt.text);
+                  submitdata();
                 },
                 child: Text('Save Expense'),
               ),
+              const Spacer(),
               TextButton(
                   onPressed: () {
                     Navigator.pop(context);
