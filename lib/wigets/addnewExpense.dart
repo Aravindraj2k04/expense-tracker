@@ -66,19 +66,21 @@ class _NewExpenseState extends State<NewExpense> {
           Row(
             children: [
               DropdownButton(
-                  items: Category.values
-                      .map(
-                        (category) => DropdownMenuItem(
-                          value: category,
-                          child: Text(
-                            category.name.toString(),
-                          ),
+                items: Category.values
+                    .map(
+                      (category) => DropdownMenuItem(
+                        value: category,
+                        child: Text(
+                          category.name.toUpperCase(),
                         ),
-                      )
-                      .toList(),
-                  onChanged: (value) {print(value);
-                  },
-                  hint: Text('Select Category')),
+                      ),
+                    )
+                    .toList(),
+                onChanged: (value) {
+                  print(value);
+                },
+                hint: Text('Select Category')
+              ),
               ElevatedButton(
                 onPressed: () {
                   print(titleController.text);
