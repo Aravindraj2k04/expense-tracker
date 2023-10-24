@@ -26,7 +26,6 @@ class _expensesState extends State<expenses> {
       category: Category.shopping,
     ),
     expense(
-      
       title: "travel",
       amount: 3000,
       date: DateTime.now(),
@@ -34,31 +33,37 @@ class _expensesState extends State<expenses> {
     ),
   ];
 
-  void _openAddExpenseOverlay(){
-    showModalBottomSheet(context: context, builder: (cxt)=>const NewExpense());
+  void _openAddExpenseOverlay() {
+    showModalBottomSheet(
+        context: context,
+        builder: (cxt) => NewExpense(
+              onAddExpense: addExpense,
+              addExpense: (expense expense1) {
+                setState(() {
+                  _registeredexpenses.add(expense1);
+                });
+              },
+            ));
   }
 
-
-  void addExpense(expense expense1) {//class is expense and object is expense1
+  void addExpense(expense expense1) {
+    //class is expense and object is expense1
     setState(() {
       _registeredexpenses.add(expense1);
     });
   }
-  {
-  
 
-  }
   @override
   Widget build(BuildContext context) {
-    
     return Scaffold(
       appBar: AppBar(
         title: Text('Expenses Tracker'),
         actions: [
-          IconButton(onPressed: () {
-            _openAddExpenseOverlay();
-          },
-           icon: Icon(Icons.add)),
+          IconButton(
+              onPressed: () {
+                _openAddExpenseOverlay();
+              },
+              icon: Icon(Icons.add)),
         ],
       ),
       body: Column(
