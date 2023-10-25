@@ -14,6 +14,7 @@ class expenses extends StatefulWidget {
 class _expensesState extends State<expenses> {
   List<expense> _registeredexpenses = [
     expense(
+      
       title: "groceries",
       amount: 1000,
       date: DateTime.now(),
@@ -36,14 +37,7 @@ class _expensesState extends State<expenses> {
   void _openAddExpenseOverlay() {
     showModalBottomSheet(
         context: context,
-        builder: (cxt) => NewExpense(
-              onAddExpense: addExpense,
-              addExpense: (expense expense1) {
-                setState(() {
-                  _registeredexpenses.add(expense1);
-                });
-              },
-            ));
+        builder: (cxt) => NewExpense());
   }
 
   void addExpense(expense expense1) {
